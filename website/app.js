@@ -1,5 +1,5 @@
 const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&appid=92d02806586c8aae6674c4153a421d90';
+const apiKey = '&appid=92d02806586c8aae6674c4153a421d90&units=imperial';
 const today = new Date();
 const theDate = today.getMonth() + '.' + today.getDate() + '.' + today.getFullYear();
 // Selecting Generate Button

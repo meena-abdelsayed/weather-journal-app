@@ -1,4 +1,6 @@
-const projectData = [];
+const projectData = {
+    data: []
+};
 // Require Express to run server and routes
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -27,7 +29,7 @@ app.post('/addAll', (req, res) => {
         temp: req.body.temp,
         feeling: req.body.feeling
     }
-    projectData.push(newEntery);
+    projectData.data.push(newEntery);
     res.send(projectData);
 })
 
