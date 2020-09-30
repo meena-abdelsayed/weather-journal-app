@@ -23,11 +23,11 @@ app.listen(port, () => console.log(`Server is Running at ${port}`));
 // POST Route (send projectData back to server after being updated)
 
 app.post('/addAll', (req, res) => {
-    console.log(req.body);
+    const { date, temp, feeling } = req.body;
     newEntery = {
-        date: req.body.date,
-        temp: req.body.temp,
-        feeling: req.body.feeling
+        date: date,
+        temp: temp,
+        feeling: feeling
     }
     projectData.data.push(newEntery);
     res.send(projectData);

@@ -40,7 +40,7 @@ const postData = async (url = '', data = {}) => {
     });
     try {
         const newData = await response.json();
-        console.log(newData);
+        //console.log(newData);
         return newData;
     } catch (error) {
         console.error('!!error', error);
@@ -51,9 +51,10 @@ const updateUI = async () => {
     const request = await fetch('/updated');
     try {
         const allData = await request.json();
-        document.getElementById('date').innerHTML = 'Date: ' + allData[allData.length - 1].date;
-        document.getElementById('temp').innerHTML = 'Temperature: ' + allData[allData.length - 1].temp + '°F';
-        document.getElementById('content').innerHTML = 'Feeling: ' + allData[allData.length - 1].feeling;
+        console.log(allData);
+        document.getElementById('date').innerHTML = 'Date: ' + allData.data[allData.data.length - 1].date;
+        document.getElementById('temp').innerHTML = 'Temperature: ' + allData.data[allData.data.length - 1].temp + '°F';
+        document.getElementById('content').innerHTML = 'Feeling: ' + allData.data[allData.data.length - 1].feeling;
     } catch (error) {
         console.error('!!!error', error);
     }
